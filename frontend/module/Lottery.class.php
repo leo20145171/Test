@@ -7,8 +7,12 @@ namespace frontend\module;
  * 
  */
 class Lottery {
-	// TODO - set init var
-	protected $startTime;
+	//set init var
+	protected $startTime;//starting time of bet
+	protected $endTime;//ending time of bet
+	protected $upperLimit;//upper limit of bet
+	protected $lowerLimit;//lower limit of bet
+	protected $number;//number of bet
 	/**
 	 */
 	function __construct() {
