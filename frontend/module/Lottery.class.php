@@ -17,14 +17,50 @@ class Lottery {
 	 */
 	function __construct() {
 		
-		// TODO - Insert your code here
+		$this->upperLimit = 1000;
+		$this->lowerLimit = 10;
+		$this->number = 1;
 	}
 	
 	/**
 	 */
 	function __destruct() {
 		
-		// TODO - Insert your code here
+		echo 'object cancel.';
+	}
+	
+	/**
+	 * to determine the amount or the bet
+	 * @param int $money 0:no limit;
+	 * @return boolean
+	 */
+	protected function judgeMomeyOfBet($money){
+		if(!is_int($money)){
+			return false;
+		}
+		if($this->upperLimit !== 0 && $this->upperLimit<$money){
+			return false;
+		}elseif ($this->lowerLimit !== 0 && $this->lowerLimit>$money){
+			return false;
+		}else {
+			return true;
+		}
+	}
+	
+	/**
+	 * to determine the number or the bet
+	 * @param int $num the number of the bet (0:no limit)
+	 * @return boolean
+	 */
+	protected function judgeNumberOfBet($num){
+		if(!is_int($num)){
+			return false;
+		}
+		if($this->number !== 0 && $this->number<$num){
+			return false;
+		}else {
+			return true;
+		}
 	}
 }
 
