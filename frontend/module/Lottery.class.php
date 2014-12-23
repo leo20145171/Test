@@ -1,6 +1,6 @@
 <?php
 
-namespace frontend\classfront;
+namespace frontend\module;
 /** 
  * @author huofenghuang
  * 
