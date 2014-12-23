@@ -3,11 +3,12 @@
 namespace frontend\module;
 /** 
  * @author huofenghuang
+ * @version 1.0.0
  * 
  */
 class Lottery {
-	// TODO - Insert your code here
-	
+	// TODO - set init var
+	protected $startTime;
 	/**
 	 */
 	function __construct() {
