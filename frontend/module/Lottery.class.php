@@ -69,7 +69,7 @@ class Lottery {
 	 * to determine can bet
 	 * @param timestamp $betTime
 	 * @return number(-1:unbegin;0:ok;1:end;)
-	 * TODO permission
+	 * TODO permission 
 	 */
 	public function judgeTimeOfBet($betTime){
 		if($this->startTime>$betTime){
