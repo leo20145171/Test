@@ -1,7 +1,6 @@
 <?php
 
 namespace frontend\module;
-use Zend\XmlRpc\Value\Integer;
 /** 
  * @author huofenghuang
  * @version 1.0.0
@@ -34,7 +33,7 @@ class Lottery {
 	 * to determine the amount or the bet
 	 * @param int $money 0:no limit;
 	 * @return boolean
-	 * TODO premission
+	 * TODO permission
 	 */
 	public function judgeMoneyOfBet($money){
 		if(!is_int($money)){
@@ -53,6 +52,7 @@ class Lottery {
 	 * to determine the number or the bet
 	 * @param int $num the number of the bet (0:no limit)
 	 * @return boolean
+	 * TODO permission
 	 */
 	public function judgeNumberOfBet($num){
 		if(!is_int($num)){
@@ -62,6 +62,22 @@ class Lottery {
 			return false;
 		}else {
 			return true;
+		}
+	}
+	
+	/**
+	 * to determine can bet
+	 * @param timestamp $betTime
+	 * @return number(-1:unbegin;0:ok;1:end;)
+	 * TODO permission
+	 */
+	public function judgeTimeOfBet($betTime){
+		if($this->startTime>$betTime){
+			return -1;
+		}elseif ($this->lowerLimit<$betTime){
+			return 1;
+		}else {
+			return 0;
 		}
 	}
 }
