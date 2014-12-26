@@ -1,0 +1,16 @@
+CREATE TABLE `lottery`.`lottery` (
+  `id` INT NOT NULL COMMENT 'primary key ',
+  `name` VARCHAR(45) CHARACTER SET 'utf8' COLLATE 'utf8_general_ci' NOT NULL DEFAULT 'bet' COMMENT 'lottery name',
+  `cate` INT NOT NULL DEFAULT 1 COMMENT 'game type',
+  `upperlimit` INT NULL DEFAULT 0 COMMENT 'upper limit of bet money',
+  `lowerlimit` INT NULL DEFAULT 0 COMMENT 'lower limit of bet money',
+  `createtime` TIMESTAMP NULL DEFAULT current_timestamp,
+  `updatetime` TIMESTAMP NULL,
+  PRIMARY KEY (`id`))
+ENGINE = MyISAM
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci
+COMMENT = 'lottery reconstruct';
+alter table `lottery`.`lottery` add column `uid` int not null comment 'user id' after `id` ;
+INSERT INTO `lottery`.`lottery` (`id`, `name`, `cate`, `uid`) VALUES ('1', 'test', '1', '1371330');
+select * from `lottery`.`lottery`;
